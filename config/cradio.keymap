@@ -35,18 +35,18 @@
         default_layer {
             bindings = <
                 &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
-                &kp A      &kp S      &hm LALT D  &hm LGUI  F    &kp G         &kp H            &hm RGUI J     &hm RALT K  &kp L      &kp QUOT
+                &kp A      &kp S      &hm LALT D  &hm LGUI  F    &kp G         &kp H            &hm RGUI J     &hm RALT K  &kp L      &kp SEMI
                 &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &kp BKSP
-                                                  &kp SPACE      &kp LSHIFT    &kp RCTRL        &to NAV_L
+                                                  &kp SPACE      &sk LSHIFT    &sk RCTRL        &to NAV_L
             >;
         };
 
         nav_layer {
             bindings = <
-                &kp ESC    &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &kp TAB    &bt BT_PRV &bt BT_NXT  &bt BT_CLR      &trans       &trans           &kp LARW       &kp DARW    &kp UARW   &kp RARW
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
-                                                  &to DEF_L       &trans       &kp ESC          &to NUM_L
+                &kp ESC    &bt BT_PRV &bt BT_NXT  &bt BT_CLR      &trans       &trans           &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
+                &kp TAB    &trans     &trans      &trans          &trans       &trans           &kp LARW       &kp DARW    &kp UARW   &kp RARW
+                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &kp ENTER
+                                                  &to DEF_L       &sk LALT     &kp ESC          &to NUM_L
             >;
         };
 
