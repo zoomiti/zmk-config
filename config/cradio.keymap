@@ -61,7 +61,7 @@
 
         num_layer {
             bindings = <
-                &kp HASH   &kp PRCNT  &kp LBRC    &kp RBRC        &kp BLSH      &kp FSLH        &kp N7        &kp N8           &kp N9        &kp MINUS
+                &kp HASH   &kp PRCNT  &kp LBRC    &kp RBRC        &kp BSLH      &kp FSLH        &kp N7        &kp N8           &kp N9        &kp MINUS
                 &kp APOS   &kp DQT    &kp LPAR    &kp RPAR        &kp EQUAL     &kp KP_MULTIPLY &kp N4        &kp N5           &kp N6        &kp PLUS
                 &kp AMPS   &kp DLLR   &kp LBKT    &kp RBKT        &kp PIPE      &kp DOT         &kp N1        &kp N2           &kp N3        &kp ENTER
                                                   &to DEF_L       &kp LGUI      &kp N0          &trans
