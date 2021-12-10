@@ -45,7 +45,7 @@
             bindings = <
                 &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I           &kp O         &kp P
                 &kp A      &kp S      &hm LALT D  &hm LGUI  F    &kp G         &kp H            &hm RGUI J     &hm RALT K      &kp L         &kp SEMI
-                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &tp COMMA EXCL  &tp DOT QMARK &kp BKSP
+                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &td COMMA EXCL  &td DOT QMARK &kp BKSP
                                                   &kp SPACE      &sk LSHIFT    &sk RCTRL        &to NAV_L
             >;
         };
