@@ -74,7 +74,7 @@
                 &kp ESC        &kp Q      &kp W        &kp E          &kp R        &kp RC(LS(TAB))        &mkp LCLK      &mmv MOVE_UP    &mkp RCLK        &mwh SCROLL_UP
                 &kp LSHIFT     &kp A      &kp S        &kp D          &kp F        &kp RC(TAB)            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mwh SCROLL_DOWN
                 &kp LCTRL      &kp Z      &kp X        &kp C          &kp V        &mkp MCLK              &mkp MB4       &mkp MB5        &mwh SCROLL_LEFT &mwh SCROLL_RIGHT
-                                                       &kp SPACE      &none        &none                  &to NUM_L 
+                                                       &kp SPACE      &none        &none                  &to NAV_L 
             >;
         };
     };
