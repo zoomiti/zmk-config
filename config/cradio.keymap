@@ -37,6 +37,15 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
+		bs: bluetooth_sel {
+			compatible = "zmk,behavior-hold-tap";
+			label = "blue";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;
+			quick_tap_ms = <200>;
+			flavor = "tap-preferred";
+			bindings = <&bt>, <&bt>;
+		};
     };
 
     keymap {
@@ -53,9 +62,9 @@
 
         nav_layer {
             bindings = <      
-                &kp ESC        &kp C_PP   &kp C_PREV   &kp C_NEXT     &kp C_STOP   &none                  &kp HOME       &kp PG_DN       &kp PG_UP     &kp END
-                &kp TAB        &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP   &none        &none                  &kp LARW       &kp DARW        &kp UARW      &kp RARW
-                &to GME_L      &bt BT_PRV &bt BT_NXT   &bt BT_CLR     &none        &none                  &none          &none           &none         &kp ENTER
+                &kp ESC        &kp C_PP   &kp C_PREV   &kp C_NEXT     &kp C_STOP   &bs BT_SEL 0 BT_CLR    &kp HOME       &kp PG_DN       &kp PG_UP     &kp END
+                &kp TAB        &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP   &none        &bs BT_SEL 1 BT_CLR    &kp LARW       &kp DARW        &kp UARW      &kp RARW
+                &to GME_L      &none      &none        &none          &none        &bs BT_SEL 2 BT_CLR    &none          &none           &none         &kp ENTER
                                                        &to DEF_L      &sk LALT     &kp ESC                &to NUM_L
             >;
         };
