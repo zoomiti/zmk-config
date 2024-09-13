@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF_L 0
@@ -15,6 +15,7 @@
 #define GME_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+
 &lt { quick_tap_ms = <200>; };
 
 / {
@@ -24,19 +25,20 @@
             label = "homerow mods";
             #binding-cells = <2>;
             tapping_term_ms = <200>;
-			quick_tap_ms = <200>;
+            quick_tap_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-		td: tapdance {
-			compatible = "zmk,behavior-hold-tap";
-			label = "tap dance";
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			quick_tap_ms = <200>;
-			flavor = "tap-preferred";
-			bindings = <&kp>, <&kp>;
-		};
+
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "tap dance";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -44,37 +46,37 @@
 
         default_layer {
             bindings = <
-                &kp Q          &kp W      &kp E        &kp R          &kp T        &kp Y                  &kp U          &kp I           &kp O         &kp P
-                &kp A          &kp S      &hm LALT D   &hm LGUI  F    &kp G        &kp H                  &hm RGUI J     &hm RALT K      &kp L         &kp SEMI
-                &kp Z          &kp X      &kp C        &kp V          &kp B        &kp N                  &kp M          &td EXCL COMMA  &td QMARK DOT &kp BKSP
-                                                       &kp SPACE      &sk LSHIFT   &sk RCTRL              &to NAV_L
+&kp Q  &kp W  &kp E       &kp R       &kp T         &kp Y      &kp U       &kp I           &kp O          &kp P
+&kp A  &kp S  &hm LALT D  &hm LGUI F  &kp G         &kp H      &hm RGUI J  &hm RALT K      &kp L          &kp SEMI
+&kp Z  &kp X  &kp C       &kp V       &kp B         &kp N      &kp M       &td EXCL COMMA  &td QMARK DOT  &kp BACKSPACE
+                          &kp SPACE   &sk LSHIFT    &sk RCTRL  &to NAV_L
             >;
         };
 
         nav_layer {
-            bindings = <      
-                &kp ESC        &kp C_PP   &kp C_PREV   &kp C_NEXT     &kp C_STOP   &bt BT_SEL 0           &kp HOME       &kp PG_DN       &kp PG_UP     &kp END
-                &kp TAB        &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP   &none        &bt BT_SEL 1           &kp LARW       &kp DARW        &kp UARW      &kp RARW
-                &to GME_L      &none      &none        &none          &bt BT_CLR   &bt BT_SEL 2           &none          &none           &none         &kp ENTER
-                                                       &to DEF_L      &sk LALT     &kp ESC                &to NUM_L
+            bindings = <
+&kp ESC    &kp C_PP    &kp C_PREV    &kp C_NEXT    &kp C_STOP    &bt BT_SEL 0  &kp HOME   &kp PG_DN  &kp PG_UP     &kp END
+&kp TAB    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none         &bt BT_SEL 1  &kp LEFT   &kp DOWN   &kp UP_ARROW  &kp RIGHT
+&to GME_L  &none       &none         &none         &bt BT_CLR    &bt BT_SEL 2  &none      &none      &none         &kp ENTER
+                                     &to DEF_L     &sk LALT      &kp ESC       &to NUM_L
             >;
         };
 
         num_layer {
-            bindings = <      
-                &td AT HASH    &kp PRCNT  &kp LBRC     &kp RBRC       &kp BSLH     &kp FSLH               &kp N7         &kp N8          &kp N9        &td UNDER MINUS
-                &td GRAVE APOS &kp DQT    &kp LPAR     &kp RPAR       &kp EQUAL    &td CARET KP_MULTIPLY  &kp N4         &kp N5          &kp N6        &kp PLUS
-                &kp AMPS       &kp DLLR   &kp LBKT     &kp RBKT       &kp PIPE     &kp DOT                &kp N1         &kp N2          &kp N3        &kp ENTER
-                                                       &to DEF_L      &kp LGUI     &kp N0                 &none 
+            bindings = <
+&td AT HASH     &kp PRCNT  &kp LBRC  &kp RBRC   &kp BSLH     &kp FSLH               &kp N7  &kp N8  &kp N9  &td UNDER MINUS
+&td GRAVE APOS  &kp DQT    &kp LPAR  &kp RPAR   &kp EQUAL    &td CARET KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp AMPS        &kp DLLR   &kp LBKT  &kp RBKT   &kp PIPE     &kp DOT                &kp N1  &kp N2  &kp N3  &kp ENTER
+                                     &to DEF_L  &kp LGUI     &kp N0                 &none
             >;
         };
 
-		gaming_layer {
+        gaming_layer {
             bindings = <
-                &kp ESC        &kp Q      &kp W        &kp E          &kp R        &kp RC(LS(TAB))        &mkp LCLK      &mmv MOVE_UP    &mkp RCLK        &mwh SCROLL_UP
-                &kp LSHIFT     &kp A      &kp S        &kp D          &kp F        &kp RC(TAB)            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mwh SCROLL_DOWN
-                &kp LCTRL      &kp Z      &kp X        &kp C          &kp V        &mkp MCLK              &mkp MB4       &mkp MB5        &mwh SCROLL_LEFT &mwh SCROLL_RIGHT
-                                                       &kp SPACE      &none        &none                  &to NAV_L 
+&kp ESC     &kp Q  &kp W  &kp E      &kp R    &kp RC(LS(TAB))  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_UP
+&kp LSHIFT  &kp A  &kp S  &kp D      &kp F    &kp RC(TAB)      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN
+&kp LCTRL   &kp Z  &kp X  &kp C      &kp V    &mkp MCLK        &mkp MB4        &mkp MB5        &mwh SCROLL_LEFT  &mwh SCROLL_RIGHT
+                          &kp SPACE  &none    &none            &to NAV_L
             >;
         };
     };
